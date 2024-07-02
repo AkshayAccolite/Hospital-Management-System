@@ -5,7 +5,6 @@ import axios from 'axios';
 const DoctorConsultation = () => {
   const [consultation, setConsultation] = useState({
     patientName: '',
-    patientId:'',
     notes: '',
     prescription: '',
   });
@@ -29,6 +28,9 @@ const DoctorConsultation = () => {
     if ( res.status==200){
 
     }
+    else{
+
+    }
     }catch(err){
       console.log(err)
     }
@@ -47,17 +49,6 @@ const DoctorConsultation = () => {
             onChange={handleChange}
             className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-600"
             placeholder="Enter patient's name"
-          />
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2">Patient ID:</label>
-          <input
-            type="text"
-            name="patientID"
-            value={consultation.patientId}
-            onChange={handleChange}
-            className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-red-600"
-            placeholder="Enter patient's ID"
           />
         </div>
         <div className="mb-4">

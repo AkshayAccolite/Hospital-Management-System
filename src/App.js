@@ -1,32 +1,9 @@
-// // src/App.js
-// import React from 'react';
-// import PatientRegistration from './pages/PatientRegistration';
-// import AppointmentBooking from './pages/AppointmentBooking';
-// import DoctorConsultation from './pages/DoctorConsultation';
-// import './output.css'
-
-// const App = () => {
-//   return (
-//     <div className="min-h-screen bg-gray-100 p-4">
-//       <h1 className="text-3xl font-bold text-center mb-8">Hospital Management System</h1>
-//       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-//         <PatientRegistration />
-//         <AppointmentBooking />
-//         <DoctorConsultation />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default App;
-
-
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import PatientRegistration from './pages/PatientRegistration';
 import AppointmentBooking from './pages/AppointmentBooking';
 import DoctorConsultation from './pages/DoctorConsultation';
+import AppointmentsList from './pages/AppointmentList'
 import './output.css'
 const App = () => {
   return (
@@ -44,12 +21,16 @@ const App = () => {
             <li>
               <Link to="/consultation" className="text-red-600 hover:text-red-800">Doctor Consultation</Link>
             </li>
+            <li>
+            <Link to="/appointment-list" className="text-yellow-500 hover:text-yellow-800">Appointments List</Link>
+            </li>
           </ul>
         </nav>
         <Routes>
           <Route path="/" element={<PatientRegistration />} />
           <Route path="/appointments" element={<AppointmentBooking />} />
           <Route path="/consultation" element={<DoctorConsultation />} />
+          <Route path="/appointment-list" element={<AppointmentsList />} />
         </Routes>
       </div>
     </Router>
